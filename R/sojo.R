@@ -151,12 +151,12 @@ sojo <-
       
       posi1 <- (Xy[nA] - temp %*% Xy[A]) / (1 - temp %*% sA)
       nega1 <- (Xy[nA] - temp %*% Xy[A]) / (-1 - temp %*% sA)
-      if (any(is.na(posi1))) {
-        posi1[is.na(posi1)] <- -Inf
-      }
-      if (any(is.na(nega1))) {
-        nega1[is.na(nega1)] <- -Inf
-      }
+      #if (any(is.na(posi1))) {
+      #  posi1[is.na(posi1)] <- -Inf
+      #}
+      #if (any(is.na(nega1))) {
+      #  nega1[is.na(nega1)] <- -Inf
+      #}
       both <- cbind(posi1,nega1)
       rownames(both) <- nA
       hit <- max(both[both < lambda - 1e-10])
